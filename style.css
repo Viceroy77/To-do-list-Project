@@ -1,75 +1,55 @@
-*{
+* {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-  
 }
-.container{
-  
-        height: 100vh;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-        background: linear-gradient(
-          to bottom right,
-          #74d0f5,
-          #377be0
-      );
-        font-family: sans-serif, 'Segoe UI', 'Open Sans';
-      }
-      .App{
-        width:350px;
-        height: 500px;
-        background-color: white;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        align-items: center;
-      }
-      #result1{
-        background-color: rgb(231, 229, 229);
-        border: none;
-    }
-      #result2{
-        background-color: rgb(231, 229, 229);
-        border: none;
-      }
-      #result3{
-        background-color: rgb(231, 229, 229);
-        border: none;
-      }
-      #result4{
-        background-color: rgb(231, 229, 229);
-        border: none;
-      }
-      #newtask{
-        position: relative;
-        background-color: #ffffff;
-        padding: 30px 20px;
-        border-radius: 5px;
-        
-       
-    }
-    #newtask input{
-        width: 70%;
-        height: 30px;
-        font-family: 'Poppins',sans-serif;
-        font-size: 15px;
-        border: 2px solid #d1d3d4;
-        padding: 12px;
-        color: #111111;
-        font-weight: 500;
-        position: relative;
-        border-radius: 5px;
-    }
-    #newtask input:focus{
-        outline: none;
-        border-color: #8052ec;
-    }
-      #newtask button{
-        position: relative;
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    position: relative;
+    font-family: sans-serif, 'Segoe UI', 'Open Sans';
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom right, #74d0f5, #377be0);
+}
+
+.App {
+    width: 350px;
+    height: 70%; /* Change height to auto to accommodate dynamic content */
+    max-height: 80vh; /* Limit maximum height */
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds height */
+    padding: 20px; /* Add padding for better spacing */
+}
+
+#newtask {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    width: 100%; /* Set width to 100% */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for visual separation */
+}
+
+#newtask input {
+  width: 77%;
+  height: 30px;
+  font-family: 'Poppins',sans-serif;
+  font-size: 15px;
+  border: 2px solid #d1d3d4;
+  padding: 12px;
+  color: #111111;
+  font-weight: 500;
+  position: relative;
+  border-radius: 5px;}
+
+#newtask button {
+  position: relative;
         float: right;
         width: 20%;
         height: 30px;
@@ -81,35 +61,65 @@
         border: none;
         color: #ffffff;
         cursor: pointer;
-        outline: none;
-    }
-    #tasks{
-      background-color: #e0dada;
-      padding: 12px;
-      width: 66%;
-      height: 30px;
-      position: relative;
-  }
-    #pending{
-      margin-top: 3%;
-      position: relative;
-    }
-    #newtask{
-      position: relative;
-      background-color: #ffffff;
-  
-      border-radius: 5px;
-    }
-      
-    #pending button{
-      position: relative;
-      float: right;
-      background-color: #8052ec;
-      color: #ffffff;
-      height: 100%;
-      width: 60px;
-      border-radius: 5px;
-      border: none;
-      cursor: pointer;
-      outline: none;
-    }
+        outline: none;}
+
+#tasks {
+   
+    padding: 12px;
+    width: 100%; /* Set width to 100% */
+    margin-top: 20px; /* Add margin-top for separation */
+    border-radius: 5px;
+    position: relative;
+}
+
+#pending {
+    margin-top: 20px; /* Add margin-top for separation */
+    background-color: #ffffff;
+    border-radius: 5px;
+    padding: 10px; /* Add padding for better spacing */
+    width: 100%; /* Set width to 100% */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for visual separation */
+    display: flex;
+    justify-content: space-between; /* Distribute items horizontally */
+    align-items: center;
+    position: relative;
+}
+
+#pending button {
+    background-color: #8052ec;
+    color: #ffffff;
+    height: 100%;
+    width: 80px; /* Adjust width for better proportion */
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    height: 30px;
+}
+.task:not(:first-child){
+  margin-top: 1em;
+}
+.task button {
+  position:relative;
+  height: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 5px; /* Add padding to the delete button */
+  width: 30px; /* Increase the width of the delete button */
+  background: #ff0000;
+  color: #ffffff;
+  border:none;
+
+}
+.task{
+  background-color: #e0dada;
+  height: 50px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+ 
+  cursor: pointer;
+}
+
